@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Events | Free Methodist Church</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#003b5a", secondary: "#b7211f", background: "#fcf9f8" }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-gray-900 font-sans">
+    
+    <header class="bg-primary text-white py-6 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold font-serif"><a href="/">Free Methodist Church</a></h1>
+            <nav>
+                <a href="/" class="hover:underline mr-4">Home</a>
+                <a href="/events/" class="hover:underline font-semibold">Events</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-gray-200 pb-4 mb-8">
+            <h2 class="text-4xl font-serif font-bold text-primary">Upcoming Events</h2>
+            <p class="text-gray-600 mt-2 md:mt-0">Join us for fellowship, worship, and community.</p>
+        </div>
+
+        {% if events_list %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for event in events_list %}
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" alt="{{ event.title }}" class="w-full h-48 object-cover">
+                        {% else %}
+                            <div class="w-full h-48 bg-primary/10 flex items-center justify-center text-primary">
+                                <svg class="w-12 h-12 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        {% endif %}
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex items-center text-secondary font-bold text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                {{ event.date|date:"F j, Y - g:i A" }}
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ event.title }}</h3>
+                            <p class="text-gray-600 flex-grow line-clamp-3">{{ event.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center py-16 bg-white rounded-xl border border-dashed border-gray-300">
+                <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <h3 class="text-lg font-bold text-gray-900">No Upcoming Events</h3>
+                <p class="text-gray-500 mt-2">Check back later for new events, or add them via the admin dashboard.</p>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center mt-12">
+        <p>&copy; 2026 Free Methodist Church. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

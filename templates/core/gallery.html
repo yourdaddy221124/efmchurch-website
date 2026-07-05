@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Media Gallery | Free Methodist Church</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#003b5a", background: "#fcf9f8" }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-gray-900 font-sans">
+    
+    <header class="bg-primary text-white py-6 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold font-serif"><a href="/">Free Methodist Church</a></h1>
+            <nav>
+                <a href="/" class="hover:underline mr-4">Home</a>
+                <a href="/gallery/" class="hover:underline font-semibold">Gallery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h2 class="text-4xl font-serif font-bold mb-8 text-primary border-b-2 border-gray-200 pb-4">Media Gallery</h2>
+        
+        {% if media_items %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {% for item in media_items %}
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        {% if item.media_type == 'photo' and item.file %}
+                            <img src="{{ item.file.url }}" alt="{{ item.title }}" class="w-full h-64 object-cover">
+                        {% elif item.media_type == 'video' and item.url %}
+                            <!-- Video Placeholder or Embed -->
+                            <div class="w-full h-64 bg-gray-100 flex items-center justify-center">
+                                <a href="{{ item.url }}" target="_blank" class="text-primary hover:underline font-semibold flex items-center">
+                                    <svg class="w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                                    Watch Video
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="w-full h-64 bg-gray-100 flex items-center justify-center text-gray-500">
+                                No media available
+                            </div>
+                        {% endif %}
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-gray-900 truncate">{{ item.title }}</h3>
+                            <p class="text-sm text-gray-500 mt-1">{{ item.uploaded_at|date:"F j, Y" }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center py-20 bg-white rounded-lg shadow-sm border border-gray-200">
+                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <h3 class="mt-2 text-sm font-semibold text-gray-900">No media yet</h3>
+                <p class="mt-1 text-sm text-gray-500">Upload photos and videos in the admin dashboard to see them here.</p>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center mt-12">
+        <p>&copy; 2026 Free Methodist Church. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

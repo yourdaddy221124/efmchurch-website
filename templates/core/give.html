@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Give | Free Methodist Church</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#003b5a", background: "#fcf9f8" }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-gray-900 font-sans">
+    
+    <header class="bg-primary text-white py-6 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold font-serif"><a href="/">Free Methodist Church</a></h1>
+            <nav>
+                <a href="/" class="hover:underline mr-4">Home</a>
+                <a href="/give/" class="hover:underline font-semibold">Give</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-16 text-center">
+        <h2 class="text-4xl font-serif font-bold text-primary mb-4">Support Our Ministry</h2>
+        <p class="text-lg text-gray-600 mb-12">Your generous giving helps us continue our mission and support our community. You can safely donate using the UPI details below.</p>
+        
+        <div class="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Scan to Pay</h3>
+            
+            <!-- Placeholder QR Code -->
+            <div class="bg-gray-50 p-4 rounded-xl border-2 border-dashed border-gray-300 mb-6 flex flex-col items-center justify-center w-64 h-64">
+                <svg class="w-24 h-24 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+                <span class="text-sm font-semibold text-gray-500">Insert QR Code Image Here</span>
+            </div>
+
+            <div class="w-full max-w-sm">
+                <p class="text-sm text-gray-500 uppercase tracking-wider font-bold mb-2">Or Use Our UPI ID</p>
+                <div class="bg-blue-50 text-primary font-mono text-xl py-4 px-6 rounded-lg font-bold border border-blue-100 flex items-center justify-between">
+                    <span id="upi-id">church@placeholder-upi</span>
+                    <button onclick="navigator.clipboard.writeText('church@placeholder-upi'); alert('UPI ID Copied!');" class="text-sm text-blue-600 hover:text-blue-800 focus:outline-none">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center mt-12">
+        <p>&copy; 2026 Free Methodist Church. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

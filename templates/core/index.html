@@ -1,0 +1,479 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Free Methodist Church | English Congregation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&amp;family=Nunito+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#001e30",
+                    "error": "#ba1a1a",
+                    "flame-accent": "#D42020",
+                    "tertiary-fixed-dim": "#92cef6",
+                    "on-secondary-fixed-variant": "#93000b",
+                    "tertiary-container": "#005376",
+                    "secondary": "#b7211f",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-container": "#94c5ee",
+                    "surface-tint": "#2f6388",
+                    "on-tertiary-fixed": "#001e2e",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#41474e",
+                    "on-tertiary-fixed-variant": "#004c6c",
+                    "background": "#fcf9f8",
+                    "globe-blue": "#EBF5FB",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "primary-fixed": "#cbe6ff",
+                    "primary-fixed-dim": "#9bccf6",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-container": "#1a5276",
+                    "inverse-primary": "#9bccf6",
+                    "surface-container-high": "#eae7e7",
+                    "outline": "#72787f",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "on-background": "#1b1c1c",
+                    "inverse-surface": "#303030",
+                    "surface": "#fcf9f8",
+                    "surface-cream": "#F9F8F6",
+                    "outline-variant": "#c1c7cf",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "on-secondary-container": "#5c0004",
+                    "inverse-on-surface": "#f3f0f0",
+                    "tertiary-fixed": "#c7e7ff",
+                    "secondary-fixed": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed": "#410002",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "primary": "#003b5a",
+                    "on-tertiary-container": "#8ac6ee",
+                    "secondary-container": "#fe554b",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#003b55",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f0eded"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px",
+                    "section-padding": "80px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Nunito Sans"],
+                    "label-sm": ["Nunito Sans"],
+                    "headline-md": ["Merriweather"],
+                    "headline-lg-mobile": ["Merriweather"],
+                    "body-lg": ["Nunito Sans"],
+                    "display-lg": ["Merriweather"],
+                    "headline-lg": ["Merriweather"],
+                    "label-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar (Drawer) -->
+<div class="fixed inset-0 z-[70] hidden" id="side-nav">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="toggleNav()"></div>
+<aside class="fixed left-0 top-0 h-full w-80 z-[60] bg-surface-container-lowest dark:bg-surface-container-low shadow-lg flex flex-col p-stack-md space-y-stack-sm transform transition-transform duration-300 -translate-x-full" id="nav-content">
+<div class="flex items-center justify-between mb-stack-lg">
+<div class="flex items-center gap-3">
+<img alt="Church Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrDiRiablKV82CEYZMCo8SrA5aLjs8HlJv-_PLNypnRoaHgbezTf-aB6GVDt2z3rS0U7dUTN2qGgnolds4uxDDHEwZIvxcU2kOSqsHLUvXHBYR-pvoAOIzjmWg5Grvm4nQzuDq_808ISbDGbxUbhQIuMjH4ImIzZypj2ZJSwTvL5dlzJfisA2IBSCMisoiIvrUcanJHtlwqSIeov5HO2AQ7bAsxdjJs6UYtvAE6U05yYgol-7nu2MgLs-cYAEHN09GNJo">
+<div>
+<h2 class="font-headline-md text-primary leading-tight">English Congregation</h2>
+<p class="text-label-sm text-on-surface-variant">Free Methodist Church</p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors" onclick="toggleNav()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 p-3 bg-primary-container text-on-primary-container rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">church</span>
+<span class="font-label-lg">Ministries</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="/events/">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label-lg">Events</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#contact">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-label-lg">Contact</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+<span class="font-label-lg">Missions</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="/gallery/">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-label-lg">Gallery</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="/prayer-requests/">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-lg">Prayer Requests</span>
+</a>
+
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="/give/">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-lg">Give</span>
+</a>
+</nav>
+<div class="pt-stack-md border-t border-outline-variant mt-auto">
+
+<div class="space-y-2">
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg">Settings</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-lg">Support</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- TopNavBar -->
+<header class="bg-surface sticky top-0 z-50 shadow-sm border-b border-outline-variant">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 text-primary hover:bg-surface-container-low rounded-full transition-colors" onclick="toggleNav()">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Free Methodist Church</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-stack-lg items-center font-body-md">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="/events/">Events</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="/gallery/">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all" onclick="document.getElementById('pastorModal').classList.remove('hidden'); document.getElementById('pastorModal').classList.add('flex'); document.body.style.overflow='hidden';">
+                Join Us
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida/AP1WRLvAFeFfacnkpnOw9DSbRD3jb6x6twmReVtXcSovCc3TJy19j1IJ-aOQeo5FxqgWNM6JGtfETPLZPPBGcoqg_S9BEZ7mM3E1oYg2XhGPj4FAoeFlfAZAsqEh_rCMSEsiLzxSK3zoT3tnFpZPh__cGbzy_ck3G2CbKAsm74Ve3CD-M05nXY0vwnrYr6gROHDYJbYkCMSif1SzsuJpTkFl89sUAj9A6j9-yfZiV04v-5voayspgV5jZjhO3qyQ&quot;);"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="text-white space-y-stack-md">
+<div class="inline-block py-1 px-4 bg-flame-accent/20 border border-flame-accent rounded-full text-flame-accent font-bold text-label-lg mb-4">
+                        Established in Andheri
+                    </div>
+<h1 class="font-display-lg text-display-lg leading-tight text-white mb-6">
+                        Free Methodist Church <br>
+<span class="text-primary-fixed-dim">English Congregation</span>
+</h1>
+<p class="text-body-lg text-white/90 max-w-lg mb-stack-lg">
+                        Welcome to Our Church in Andheri, Mumbai. A warm community rooted in faith, committed to serving and spreading the word of God.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+
+<button class="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-body-lg hover:bg-white/10 backdrop-blur-sm transition-all">
+                            New Here?
+                        </button>
+</div>
+</div>
+<div class="hidden md:flex justify-center relative">
+
+<div class="absolute -bottom-10 glass-effect p-6 rounded-xl shadow-lg border border-outline-variant max-w-[240px] -right-10">
+<h4 class="font-headline-md text-primary text-[20px] mb-2">Sunday Service</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-bold mb-1">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<span class="">9:30 am - 11:00 am</span>
+</div>
+<p class="text-label-sm text-outline">English Language Service</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About & Document Section -->
+<section class="py-section-padding bg-surface-cream">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-7 space-y-stack-md">
+<span class="text-secondary font-bold tracking-widest label-lg">OUR MISSION</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">A Legacy of Faith in Andheri</h2>
+<div class="prose prose-lg text-on-surface-variant font-body-md leading-relaxed">
+<p class="mb-4">
+                                Our church is a vibrant English-speaking congregation located just 3 kms from the Mumbai airport. We are part of the Free Methodist tradition, emphasizing biblical holiness, social justice, and personal transformation through Jesus Christ.
+                            </p>
+<p class="mb-4">
+                                Whether you are a traveler visiting Mumbai or a resident looking for a spiritual home, our doors are open. We gather every Sunday for meaningful worship, sound biblical teaching, and genuine fellowship.
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-stack-lg">
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">location_on</span>
+<h4 class="font-bold text-primary mb-2">Location</h4>
+<p class="text-body-md text-on-surface-variant">Andheri East, Mumbai 400047, IN</p>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">mail</span>
+<h4 class="font-bold text-primary mb-2">Email Us</h4>
+<p class="text-body-md text-on-surface-variant">efmcandheri@gmail.com</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+<div class="bg-cover bg-center h-[500px]" data-alt="A cinematic, high-quality photograph of a modern church sanctuary with natural light streaming through high windows. The setting is serene and welcoming, featuring clean architectural lines, comfortable seating, and a warm, spiritual atmosphere consistent with a professional corporate yet inviting aesthetic. The lighting is soft, creating long, peaceful shadows on a pristine light-colored floor." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDNpGmv8yIWJRPWj4OEPM_EV8D47gZsEpWUcvzZ_qQo2RFiEcpQhbbWm1A8k8UsD2BpoUHyA0OJ_n4GNzBRWH_ejW9bco8o6g_zAKXI_-nnnwOQwubVCGTfTTN1Z7mkpo8bYmyOo3MaTSbeViHuUo6W3-pVvCgEky6NDIgU_zGwYc9Oe6Cqo1cQp2wBwhNO-oiqgr0AqHAND4J63eFCT-pVs6OanCTzNhEaw5enCJehO8DlG0VjPPjnDA&quot;);"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pastor Section -->
+<section class="py-section-padding bg-globe-blue">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row items-center gap-stack-lg bg-white rounded-2xl p-stack-lg shadow-sm border border-outline-variant">
+<div class="w-64 h-64 md:w-80 md:h-80 flex-shrink-0 rounded-xl overflow-hidden shadow-md">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional, warm, and approachable portrait of Rev. Sanjaykumar Bardhan, a middle-aged South Asian pastor. He is wearing professional attire, perhaps a clerical collar or a smart suit, smiling gently with a look of compassion and leadership. The background is a soft-focus library or church office, lit with warm, professional studio lighting that emphasizes trust and stability." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCyJGN36VG9Oh4ZKsA5c4EcnQ7dtCzVHi2DgHtIRDBBUhYJbZaJprr7eld89p2D6uP84Pw6nxBSnefBmvfggzSi0MLVR1aDegnfCwM_QHSIAeon0_hTELK-PXdxcbpNME9geeugzmrEh2OtorkXkpApnRbflRRcEeFtQNvfLNOu7bDK48o2UAn5do-XlgBo-CuIpohUUONoTXbV23IzZzsxP0u0eFRnv58JjpjXJ5S2aeLZvdkKwmRooA&quot;);"></div>
+</div>
+<div class="flex-1 space-y-4">
+<span class="text-flame-accent font-bold label-lg">LEADERSHIP</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Rev. Sanjaykumar Bardhan</h2>
+<p class="text-body-lg text-on-surface-variant italic">Lead Pastor, English Congregation</p>
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                            With a heart for the city and a passion for God's word, Rev. Bardhan has been leading our congregation with grace and wisdom. His ministry focuses on building a Christ-centered community that is inclusive, prayerful, and mission-minded.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-6 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-label-sm text-outline">Direct Contact</p>
+<p class="font-bold text-primary">7738198066</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div>
+<p class="text-label-sm text-outline">Available for Counseling</p>
+<p class="font-bold text-primary">By Appointment</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Upcoming Events -->
+<section class="py-section-padding bg-surface">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="flex justify-between items-end mb-stack-lg">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Upcoming Events</h2>
+                <p class="text-on-surface-variant font-body-md">Join us in fellowship and worship.</p>
+            </div>
+            <a href="/events/" class="hidden md:inline-block text-primary font-bold hover:underline">View All Events &rarr;</a>
+        </div>
+        
+        {% if events %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for event in events %}
+                    <div class="bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col">
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" alt="{{ event.title }}" class="w-full h-48 object-cover">
+                        {% else %}
+                            <div class="w-full h-48 bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-4xl opacity-50">event</span>
+                            </div>
+                        {% endif %}
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex items-center text-secondary font-bold text-sm mb-2">
+                                <span class="material-symbols-outlined text-sm mr-1">schedule</span>
+                                {{ event.date|date:"F j, Y - g:i A" }}
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ event.title }}</h3>
+                            <p class="text-gray-600 flex-grow line-clamp-3">{{ event.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="mt-8 text-center md:hidden">
+                <a href="/events/" class="inline-block bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-bold">View All Events</a>
+            </div>
+        {% else %}
+            <div class="text-center py-16 bg-white rounded-xl border border-dashed border-outline-variant">
+                <span class="material-symbols-outlined text-4xl text-outline mb-4">event_busy</span>
+                <h3 class="text-lg font-bold text-gray-900">No Upcoming Events</h3>
+                <p class="text-gray-500 mt-2">Check back later for new events.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high border-t border-outline-variant">
+<div class="max-w-container-max mx-auto py-section-padding px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-stack-lg">
+<div class="max-w-md">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Church Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAILdxRFmiPA_Qgp-UI0MSNOf_W7yKBuhtRBVdZarTQwXM3xd-JG9zwF9VI4meaZjUl0xhkgDca6diiWB3fYN5tD1sbU5OrVDCJfRJtHHXpV7nvlxFwoV2druSqr0YhhuKnKSAfc65FNXNvqy6UCGXo9d2SN6DSPQFjALOdnAbNzvZ-XLKY2q6r6ZuQiEhYDTV2GS_H_YK2gymq0qshm-H8Hen7ctzFbGXorshRSU_mS-7F_onRmsQN4rNNi5boss6xOdo">
+<h2 class="font-headline-md text-headline-md text-on-surface">Free Methodist Church</h2>
+</div>
+<p class="text-on-surface-variant mb-6 font-body-md">
+                    Dedicated to serving the English-speaking community in Andheri and beyond through the transforming power of the Gospel.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-lg">
+<div class="space-y-4">
+<h4 class="font-bold text-primary">Quick Links</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary underline" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Location</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Contact us</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-primary">Resources</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Member Portal</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity font-bold text-primary" href="#">Sitemap</a>
+</nav>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm w-full md:w-auto">
+<h4 class="font-bold text-primary mb-2">Visit Us</h4>
+<p class="text-on-surface-variant text-label-lg mb-4">
+                    Andheri East, Mumbai 400047, IN<br>
+                    (3 kms from Airport)
+                </p>
+<button class="w-full border border-primary text-primary px-4 py-2 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">Get Directions</button>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center text-label-sm text-outline">
+            © 2024 Free Methodist Church English Congregation. All rights reserved.
+        </div>
+</footer>
+<script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            const content = document.getElementById('nav-content');
+            if (nav.classList.contains('hidden')) {
+                nav.classList.remove('hidden');
+                setTimeout(() => content.classList.remove('-translate-x-full'), 10);
+            } else {
+                content.classList.add('-translate-x-full');
+                setTimeout(() => nav.classList.add('hidden'), 300);
+            }
+        }
+
+        // Lightweight scroll micro-interactionn
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-md', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+    </script>
+
+    </script>
+
+    <!-- Pastor Contact Modal -->
+    <div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[70] hidden items-center justify-center p-4" id="pastorModal">
+        <div class="bg-surface-container-lowest w-full max-w-sm rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+            <div class="p-4 bg-primary text-on-primary flex justify-between items-center">
+                <h2 class="font-headline-md text-xl">Pastor Contact</h2>
+                <button class="p-1 hover:bg-white/10 rounded-full transition-colors" onclick="document.getElementById('pastorModal').classList.add('hidden'); document.getElementById('pastorModal').classList.remove('flex'); document.body.style.overflow='auto';">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-6 space-y-4 text-center">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary mb-2 shadow-lg">
+                    <img src="/static/images/pastor.jpg" alt="Pastor Sanjay Bardhan" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-bold text-lg text-primary">Pastor Sanjay Bardhan</h3>
+                <p class="text-on-surface-variant flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">call</span> 7738198066
+                </p>
+                <a href="https://instagram.com/sanjaybardhan" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    @sanjaybardhan
+                </a>
+                <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:opacity-90 shadow-md transition-all mt-4" onclick="document.getElementById('pastorModal').classList.add('hidden'); document.getElementById('pastorModal').classList.remove('flex'); document.body.style.overflow='auto';">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</body></html>
